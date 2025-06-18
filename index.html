@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão Campo-Cidade | Unindo Saberes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1497440001378-f3e0a5828e3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 1rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .slogan {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        nav {
+            background-color: #2c8a4a;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #d4e6a0;
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #2c8a4a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        #galeria {
+            padding: 2rem 0;
+        }
+        
+        .galeria-titulo {
+            text-align: center;
+            color: #2c8a4a;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .galeria-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+        
+        .galeria-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 250px;
+            position: relative;
+        }
+        
+        .galeria-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .galeria-imagem {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .galeria-legenda {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(44, 138, 74, 0.9);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .galeria-item:hover .galeria-legenda {
+            transform: translateY(0);
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #2c8a4a;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            margin-top: 1rem;
+            color: #2c8a4a;
+        }
+        
+        footer {
+            background-color: #1a3a27;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .galeria-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Conexão Campo-Cidade</div>
+        <p class="slogan">Unindo saberes, fortalecendo laços e construindo um futuro sustentável através da integração entre o rural e o urbano.</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <section id="sobre">
+            <h2>Sobre a Conexão</h2>
+            <p>Em um mundo cada vez mais urbanizado, a conexão entre campo e cidade se torna essencial para o desenvolvimento sustentável. Nosso projeto busca criar pontes entre esses dois universos, promovendo o intercâmbio de conhecimentos, o comércio justo e a valorização da agricultura familiar.</p>
+            <p>Acreditamos que a integração entre produtores rurais e consumidores urbanos pode gerar benefícios mútuos: alimentos mais saudáveis nas cidades e melhores condições de vida no campo.</p>
+        </section>
+        
+        <section id="projetos">
+            <h2>Nossos Projetos</h2>
+            <p>Conheça algumas das iniciativas que estamos desenvolvendo para fortalecer a conexão campo-cidade:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li>Feiras de produtores locais</li>
+                <li>Visitas escolares às propriedades rurais</li>
+                <li>Oficinas de agricultura urbana</li>
+                <li>Programa de entrega direta de produtos</li>
+            </ul>
+        </section>
+        
+        <section id="galeria">
+            <h2 class="galeria-titulo">Nossa Galeria</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Veja momentos que capturam a essência da conexão campo-cidade</p>
+            
+            <div class="galeria-container">
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Feira de produtores" class="galeria-imagem">
+                    <div class="galeria-legenda">Feira de produtores rurais na cidade</div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="https://lunetas.com.br/wp-content/uploads/2021/12/infancias-rurais-sul-brasil-portal-lunetas.jpg" alt="Crianças no campo" class="galeria-imagem">
+                    <div class="galeria-legenda">Crianças aprendendo sobre plantio</div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Oficina de cultivo" class="galeria-imagem">
+                    <div class="galeria-legenda">Oficina de cultivo urbano</div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Entrega de alimentos" class="galeria-imagem">
+                    <div class="galeria-legenda">Cestas de produtos frescos</div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="https://assets.brasildefato.com.br/2024/09/image_processing20200201-29235-8u4yn7.jpg" alt="Agricultor no mercado" class="galeria-imagem">
+                    <div class="galeria-legenda">Produtor orgânico na feira</div>
+                </div>
+                
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Horta comunitária" class="galeria-imagem">
+                    <div class="galeria-legenda">Horta comunitária urbana</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="depoimentos">
+            <h2>Quem Participa Diz</h2>
+            
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Participar do projeto mudou minha forma de ver a produção de alimentos. Agora conheço pessoalmente os agricultores que fornecem para minha família."</p>
+                    <p class="testimonial-author">- Ana Clara, consumidora</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Antes vendia apenas para intermediários. Agora, através das feiras na cidade, consigo um preço melhor e contato direto com quem consome meus produtos."</p>
+                    <p class="testimonial-author">- Seu José, agricultor</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"As crianças ficam encantadas quando visitam as propriedades rurais. É uma experiência de aprendizado que nenhuma sala de aula poderia substituir."</p>
+                    <p class="testimonial-author">- Professora Marta</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#depoimentos">Depoimentos</a>
+        </div>
+        <p>&copy; 2025 Conexão Campo-Cidade. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
